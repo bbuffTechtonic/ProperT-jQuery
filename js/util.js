@@ -1,4 +1,16 @@
 //User Object
+function User(firstName, lastName, email, password, avatar) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.email = email;
+  this.password = password;
+  this.avatar = avatar;
+}
+
+function Property() {
+  this.propertyInfo = new Array();
+}
+
 var users =
   [
     {
@@ -19,7 +31,7 @@ var properties =
     city: "Denver",
     state: "CO",
     zip: 80209,
-    CurrentTenant:
+    currentTenant:
       {
         firstName: "Maggie",
         lastName: "Brown",
