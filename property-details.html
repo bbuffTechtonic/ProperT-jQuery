@@ -67,11 +67,52 @@
                 <p id="lease-range" class="card-text indiv-prop-spec">Lease Date Range: 6/1/2018 - 5/31/2019</p>
               </div>
               <br>
-              <a href="#" class="btn btn-outline-success btn-sm">Edit Details</a>
-              <a href="view-properties.html" class="btn btn-outline-success btn-sm">Back to All Properties</a>
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-property-modal">Edit Details</button>
+              <a href="view-properties.html" class="btn btn-success btn-sm">Back to All Properties</a>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Edit Property Modal -->
+      <div class="modal fade" id="edit-property-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Edit Your Property</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body .container-fluid">
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <div id="edit-prop-address">
+                      <!-- pull in info w/ jQuery -->
+                      <h5 class="" id="edit-prop-address-street">123 Elm St.</h5>
+                      <h5 class="" id="edit-prop-address-street2">#305</h5>
+                      <h5 class="" id="edit-prop-address-city/state/zip">Denver, CO 80209</h5>
+                    </div>
+                    <br>
+                    <div id="edit-prop-specs">
+                      <p id="edit-tenant-name" class="card-text indiv-prop-spec">Current Tenant: </p>
+                      <p id="edit-tenant-email" class="card-text indiv-prop-spec">Current Tenant Email: </p>
+                      <p id="edit-rental-amount" class="card-text indiv-prop-spec">Monthly Rental Amount: </p>
+                      <p id="edit-lease-range" class="card-text indiv-prop-spec">Lease Date Range: </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="edit-prop-details-save"class="btn btn-success btn-sm">Save</button>
+            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
     <section id="expense-details">
