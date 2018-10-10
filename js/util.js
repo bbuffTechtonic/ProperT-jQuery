@@ -17,9 +17,9 @@ var properties =
     zip: 80209,
     Current Tenant:
       {
-        firstName: "Patrick",
-        lastName: "Smith",
-        email: "patrick@yoohoo.org"
+        firstName: "Maggie",
+        lastName: "Brown",
+        email: "maggie@abc.org"
       },
     monthlyRent: 1750,
     leaseStart: "6/1/2018",
@@ -98,12 +98,18 @@ var properties =
 ];
 
 //Localstorage stuff
-if (typeof(Storage) !== "undefined") {
-  // Store
-  localStorage.setItem("user", userOne);
-  localStorage.setItem("properties", properties);
-  // Retrieve
-    //document.getElementById("heading").innerHTML = localStorage.getItem("content");
-} else {
-  document.getElementById("heading").innerHTML = "Sorry, your browser does not support Web Storage...";
+document.addEventListener("DOMContentLoaded", function(e) {
+    loadContent();
+});
+
+function loadContent(){
+  if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("user", userOne);
+    localStorage.setItem("properties", properties);
+    // Retrieve
+      //document.getElementById("heading").innerHTML = localStorage.getItem("content");
+  } else {
+    document.getElementById("heading").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
 }
