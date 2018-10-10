@@ -11,36 +11,32 @@ function Property() {
   this.propertyInfo = new Array();
 }
 
-var users =
-  [
+var testUser = new User("Patrick","Smith","patrick@yoohoo.org","password","../images/userOne.jpeg");
+
+//Property Object
+var testProperty =
+{
+  address:
     {
-      firstName: "Patrick",
-      lastName: "Smith",
-      email: "patrick@yoohoo.org",
-      password: "password",
-      avatar: "../images/userOne.jpeg"
-    }
-  ];
-//Property Object Array
-var properties =
-[
-  {
-    landlord: "patrick@yoohoo.org",
-    address1: "123 Elm St.",
-    address2: "305",
-    city: "Denver",
-    state: "CO",
-    zip: 80209,
-    currentTenant:
+      address1: "123 Elm St.",
+      address2: "305",
+      city: "Denver",
+      state: "CO",
+      zip: 80209
+    },
+    tenantInfo:
       {
         firstName: "Maggie",
         lastName: "Brown",
-        email: "maggie@abc.org"
-      },
-    monthlyRent: 1750,
-    leaseStart: "6/1/2018",
-    leaseEnd: "5/31/2019",
-    expenses:
+        email: "maggie@abc.org",
+        monthlyRent: 1750,
+        leaseStart: "6/1/2018",
+        leaseEnd: "5/31/2019"
+      }
+};
+
+var expenses = {
+  expenses:
       {
         mileage:
           [
@@ -110,8 +106,7 @@ var properties =
             }
           ]
       }
-  }
-];
+  };
 
 //Localstorage stuff
 $(loadContent);
