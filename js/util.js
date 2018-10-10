@@ -15,7 +15,7 @@ var properties =
     city: "Denver",
     state: "CO",
     zip: 80209,
-    Current Tenant:
+    CurrentTenant:
       {
         firstName: "Maggie",
         lastName: "Brown",
@@ -47,7 +47,7 @@ var properties =
         maintenance:
           [
             {
-              date: "7/18/2018"
+              date: "7/18/2018",
               description:"cleaning",
               amount:160,
               image:"../images/receipt.jpg"
@@ -56,7 +56,7 @@ var properties =
         suppliesGoods:
           [
             {
-              date: "9/01/2018"
+              date: "9/01/2018",
               description:"bathroom cleaning supplies",
               amount:25,
               image:"../images/receipt.jpg"
@@ -65,7 +65,7 @@ var properties =
         misc:
           [
             {
-              date: "7/18/2018"
+              date: "7/18/2018",
               description:"painting living room wall",
               amount:800,
               image:"../images/receipt.jpg"
@@ -99,14 +99,14 @@ var properties =
 
 //Localstorage stuff
 document.addEventListener("DOMContentLoaded", function(e) {
-    loadContent();
+    loadContent(userOne, properties);
 });
 
-function loadContent(){
+function loadContent(oUser, aProperties){
   if (typeof(Storage) !== "undefined") {
     // Store
-    localStorage.setItem("user", userOne);
-    localStorage.setItem("properties", properties);
+    localStorage.setItem("user", oUser);
+    localStorage.setItem("properties", aProperties);
     // Retrieve
       //document.getElementById("heading").innerHTML = localStorage.getItem("content");
   } else {
