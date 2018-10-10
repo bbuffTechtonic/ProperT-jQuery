@@ -5,10 +5,13 @@ function User(firstName, lastName, email, password, avatar) {
   this.email = email;
   this.password = password;
   this.avatar = avatar;
+  this.properties = [];
 }
 
 function Property() {
-  this.propertyInfo = new Array();
+  this.address = {};
+  this.tenantInfo = {};
+  this.expenses = {};
 }
 
 var testUser = new User("Patrick","Smith","patrick@yoohoo.org","password","../images/userOne.jpeg");
