@@ -5,10 +5,13 @@ function User(firstName, lastName, email, password, avatar) {
   this.email = email;
   this.password = password;
   this.avatar = avatar;
+  this.properties = [];
 }
 
 function Property() {
-  this.propertyInfo = new Array();
+  this.address = {};
+  this.tenantInfo = {};
+  this.expenses = {};
 }
 
 var users =
@@ -40,7 +43,7 @@ var properties =
     monthlyRent: 1750,
     leaseStart: "6/1/2018",
     leaseEnd: "5/31/2019",
-    expenses:
+    expenses:[
       {
         mileage:
           [
