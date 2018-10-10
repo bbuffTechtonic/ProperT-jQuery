@@ -1,15 +1,19 @@
 //User Object
-var userOne = {
-  firstName: "Patrick",
-  lastName: "Smith",
-  email: "patrick@yoohoo.org",
-  password: "password",
-  avatar: "../images/userOne.jpeg"
-};
+var users =
+  [
+    {
+      firstName: "Patrick",
+      lastName: "Smith",
+      email: "patrick@yoohoo.org",
+      password: "password",
+      avatar: "../images/userOne.jpeg"
+    }
+  ];
 //Property Object Array
 var properties =
 [
   {
+    landlord: "patrick@yoohoo.org",
     address1: "123 Elm St.",
     address2: "305",
     city: "Denver",
@@ -98,9 +102,7 @@ var properties =
 ];
 
 //Localstorage stuff
-document.addEventListener("DOMContentLoaded", function(e) {
-    loadContent(userOne, properties);
-});
+$(loadContent);
 
 function loadContent(oUser, aProperties){
   if (typeof(Storage) !== "undefined") {
