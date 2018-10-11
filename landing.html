@@ -90,13 +90,13 @@
                   </div>
                 </div>
               </div>
-              <form>
+              <form id="signupForm">
                 <div class="form-group first-name">
                   <div class="input-group last">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="inputGroupPrependFirstName"><i class="far fa-user"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="signUpFirstName" aria-describedby="firstName" placeholder="First" required>
+                    <input type="text" name="signUpFirstName" class="form-control" id="signUpFirstName" aria-describedby="firstName" placeholder="First" required>
                   </div>
                 </div>
                 <div class="form-group last-name">
@@ -104,7 +104,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="inputGroupPrependLastName"><i class="far fa-user"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="signUpLastName" placeholder="Last" required>
+                    <input type="text" name="signUpLastName" class="form-control" id="signUpLastName" placeholder="Last" required>
                   </div>
                 </div>
                 <div class="form-group email">
@@ -112,7 +112,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="inputGroupPrependUpEmail"><i class="far fa-envelope"></i></span>
                     </div>
-                    <input type="email" class="form-control" id="signUpEmail" aria-describedby="signUpEmail" placeholder="Email" required>
+                    <input type="email" name="signUpEmail" class="form-control" id="signUpEmail" aria-describedby="signUpEmail" placeholder="Email" required>
                   </div>
                 </div>
                 <div class="form-group password">
@@ -120,12 +120,12 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="inputGroupPrependUpPassword"><i class="fas fa-lock"></i></span>
                     </div>
-                    <input type="password" class="form-control" id="signUpPassword" placeholder="Create Password" required>
+                    <input type="password" name="signUpPassword" class="form-control" id="signUpPassword" placeholder="Create Password" required>
                   </div>
                 </div>
-                <a class="btn btn-success btn-block" href="dashboard.html" role="button">Sign Up</a>
-                <!-- Temporarily disabling submit button and hard coding link to dashboard-->
-                <!-- <button type="sign-in" class="btn btn-success btn-block">Sign Up</button> -->
+                <!-- <a class="btn btn-success btn-block" href="dashboard.html" role="button">Sign Up</a> -->
+                <!-- Temporarily disabling submit button and hard coding link to dashboard -->
+                <button type="submit" class="btn btn-success btn-block">Sign Up</button>
                 <div class="new user text-center">
                   <hr>
                   <p>Already have an account? <a href="#" data-toggle="collapse" data-target=".sign-up-collapse ,.sign-in-collapse" aria-expanded="false" aria-controls="signUpCollapse signInCollapse">Sign In</a></p>
@@ -195,5 +195,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="js/util.js" charset="utf-8"></script>
+  <script src="js/landing.js" charset="utf-8"></script>
 </body>
 </html>

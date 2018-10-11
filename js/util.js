@@ -95,13 +95,17 @@ var expenses1 = {
   ]
 };
 
+var landlords = [];
 var property1 = new Property(PropertyAddress1,tenantInfo1,expenses1);
 var landlord1 = new User("Patrick","Smith","patrick@yoohoo.org","password","../images/userOne.jpeg");
 landlord1.properties.push(property1);
-var landlords = [];
 landlords.push(landlord1);
 //Localstorage stuff
 $(loadContent(landlords));
+
+function updateState(aUser){
+  localStorage.setItem("user", JSON.stringify(aUser));
+}
 
 function loadContent(aUser){
   if (typeof(Storage) !== "undefined") {
