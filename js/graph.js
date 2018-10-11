@@ -354,6 +354,9 @@ document.addEventListener("DOMContentLoaded", function(e){
   window.sep2018_Two = new propMonth("Property Two","Sep", 750, 1050);
   window.oct2018_Two = new propMonth("Property Two","Oct", 500, 1050);
 
+  gYear.cProp1Y17();
+  gYear.cProp1Y18();
+
   var selYear = $('#my-year').val();
   gYear.barChart(selYear);
 
