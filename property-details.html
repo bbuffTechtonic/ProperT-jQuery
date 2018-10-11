@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/property-details.css">
   <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/add-property.css">
   <link rel="stylesheet" href="./css/nav-test-styles.css">
   <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,500i,700,800" rel="stylesheet">
   <link rel="icon" href="./images/proper_t_logo.ico" type="image/x-icon"/>
@@ -24,7 +25,7 @@
           <a class="nav-link" href="dashboard.html">Dashboard<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="add-property.html">Add Property</a>
+          <a class="nav-link" href="#add-property-modal" data-toggle="modal" data-target="#add-property-modal">Add Property</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="account-management.html">My Account</a>
@@ -41,6 +42,150 @@
         </li>
       </ul>
       <a href="landing.html" id="logout-button" class="btn btn-outline-success btn-sm">Logout</a>
+    </div>
+    <!-- Add Property Modal -->
+    <div class="modal fade" id="add-property-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="add-prop-modal-header">
+            <h5 class="modal-title">Add New Property</h5>
+            <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          <div class="modal-body container-fluid">
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <form id="add-new-property">
+                      <div class="form row">
+                        <div class="form-group col-md-12">
+                          <label for="inputAddress">Address 1</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-9">
+                          <label for="inputAddress2">Address 2</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Address">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="apartmentNum">Apt #</label>
+                          <input type="text" class="form-control" id="apartmentNum" placeholder="Apt B">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">City</label>
+                          <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="inputState">State</label>
+                          <select id="inputState" class="form-control">
+                          <option value="" selected="selected">Select a State</option>
+                          <option value="AL">Alabama</option>
+                          <option value="AK">Alaska</option>
+                          <option value="AZ">Arizona</option>
+                          <option value="AR">Arkansas</option>
+                          <option value="CA">California</option>
+                          <option value="CO">Colorado</option>
+                          <option value="CT">Connecticut</option>
+                          <option value="DE">Delaware</option>
+                          <option value="DC">District Of Columbia</option>
+                          <option value="FL">Florida</option>
+                          <option value="GA">Georgia</option>
+                          <option value="HI">Hawaii</option>
+                          <option value="ID">Idaho</option>
+                          <option value="IL">Illinois</option>
+                          <option value="IN">Indiana</option>
+                          <option value="IA">Iowa</option>
+                          <option value="KS">Kansas</option>
+                          <option value="KY">Kentucky</option>
+                          <option value="LA">Louisiana</option>
+                          <option value="ME">Maine</option>
+                          <option value="MD">Maryland</option>
+                          <option value="MA">Massachusetts</option>
+                          <option value="MI">Michigan</option>
+                          <option value="MN">Minnesota</option>
+                          <option value="MS">Mississippi</option>
+                          <option value="MO">Missouri</option>
+                          <option value="MT">Montana</option>
+                          <option value="NE">Nebraska</option>
+                          <option value="NV">Nevada</option>
+                          <option value="NH">New Hampshire</option>
+                          <option value="NJ">New Jersey</option>
+                          <option value="NM">New Mexico</option>
+                          <option value="NY">New York</option>
+                          <option value="NC">North Carolina</option>
+                          <option value="ND">North Dakota</option>
+                          <option value="OH">Ohio</option>
+                          <option value="OK">Oklahoma</option>
+                          <option value="OR">Oregon</option>
+                          <option value="PA">Pennsylvania</option>
+                          <option value="RI">Rhode Island</option>
+                          <option value="SC">South Carolina</option>
+                          <option value="SD">South Dakota</option>
+                          <option value="TN">Tennessee</option>
+                          <option value="TX">Texas</option>
+                          <option value="UT">Utah</option>
+                          <option value="VT">Vermont</option>
+                          <option value="VA">Virginia</option>
+                          <option value="WA">Washington</option>
+                          <option value="WV">West Virginia</option>
+                          <option value="WI">Wisconsin</option>
+                          <option value="WY">Wyoming</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                          <label for="inputZip">Zip</label>
+                          <input type="text" class="form-control" id="inputZip">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="propertyImage">Upload Image</label>
+                            <input type="file" class="form-control-file" id="propertyImage">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <label for="inputAddress">Tenant Name</label>
+                          <input type="text" class="form-control" id="tenant-name" placeholder="John Williams">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <label for="inputAddress">Tenant Email</label>
+                          <input type="email" class="form-control" id="tenant-email" placeholder="jwilliams@jj.com">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <label for="inputAddress">Monthly Rental Amount ($)</label>
+                          <input type="text" class="form-control" id="rental-amount" placeholder="1,350.00">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <label for="inputAddress">Lease Date Range:</label>
+                          <input type="text" class="form-control" id="lease-range" placeholder="6/1/2018 - 5/31/2019">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- pop-up to verify new info to save?? -->
+            <!-- add jQuery click event to save -->
+            <button type="button" id="add-prop-save" class="btn btn-success btn-sm">Save</button>
+            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container prop-details-container">
@@ -73,46 +218,46 @@
         </div>
       </div>
       <!-- Edit Property Modal -->
-      <div class="modal fade" id="edit-property-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header" id="edit-prop-modal-header">
-            <h5 class="modal-title">Edit Your Property</h5>
-            <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">x</span>
-            </button>
-          </div>
-          <div class="modal-body .container-fluid">
-            <div class="row">
-              <div class="col">
-                <div class="card">
-                  <div class="card-body">
-                    <div id="edit-prop-address-container">
-                      <!-- pull in info w/ jQuery -->
-                      <h5 class="" id="edit-prop-address-street">123 Elm St.</h5>
-                      <h5 class="" id="edit-prop-address-street2">#305</h5>
-                      <h5 class="" id="edit-prop-address-city/state/zip">Denver, CO 80209</h5>
-                    </div>
-                    <br>
-                    <div id="edit-prop-specs-container">
-                      <p id="edit-tenant-name" class="card-text indiv-prop-spec">Current Tenant: </p>
-                      <p id="edit-tenant-email" class="card-text indiv-prop-spec">Current Tenant Email: </p>
-                      <p id="edit-rental-amount" class="card-text indiv-prop-spec">Monthly Rental Amount: </p>
-                      <p id="edit-lease-range" class="card-text indiv-prop-spec">Lease Date Range: </p>
+      <div class="modal fade" id="edit-property-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header" id="edit-prop-modal-header">
+              <h5 class="modal-title">Edit Your Property</h5>
+              <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">x</span>
+              </button>
+            </div>
+            <div class="modal-body .container-fluid">
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <div id="edit-prop-address-container">
+                        <!-- pull in info w/ jQuery -->
+                        <h5 class="" id="edit-prop-address-street">123 Elm St.</h5>
+                        <h5 class="" id="edit-prop-address-street2">#305</h5>
+                        <h5 class="" id="edit-prop-address-city/state/zip">Denver, CO 80209</h5>
+                      </div>
+                      <br>
+                      <div id="edit-prop-specs-container">
+                        <p id="edit-tenant-name" class="card-text indiv-prop-spec">Current Tenant: </p>
+                        <p id="edit-tenant-email" class="card-text indiv-prop-spec">Current Tenant Email: </p>
+                        <p id="edit-rental-amount" class="card-text indiv-prop-spec">Monthly Rental Amount: </p>
+                        <p id="edit-lease-range" class="card-text indiv-prop-spec">Lease Date Range: </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <!-- pop-up to verify new info to save?? -->
-            <!-- add jQuery click event to save -->
-            <button type="button" id="edit-prop-details-save" class="btn btn-success btn-sm">Save</button>
-            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
+            <div class="modal-footer">
+              <!-- pop-up to verify new info to save?? -->
+              <!-- add jQuery click event to save -->
+              <button type="button" id="edit-prop-details-save" class="btn btn-success btn-sm">Save</button>
+              <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
     <section id="expense-details">

@@ -2,11 +2,11 @@
   font-family: 'Exo 2', sans-serif;
 }
 
-body {
-  background-image: url("../images/what-the-hex.png");
+#add-prop-modal-header {
+  background-color: #343a40;
+  color: white;
 }
 
-#add-new-property {
-  padding-bottom: 20px;
-  padding-top: 20px;
+.close-modal {
+  color: white;
 }
