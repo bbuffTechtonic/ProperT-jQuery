@@ -17,7 +17,7 @@ function Property(oAddress, oTenantInfo, oExpenses) {
 //Property Object
 var PropertyAddress1 = {
   address1: "123 Elm St.",
-  address2: "305",
+  address2: "#305",
   city: "Denver",
   state: "CO",
   zip: 80209
