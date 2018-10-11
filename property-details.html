@@ -268,7 +268,59 @@
         <div class="col-md-3 col"></div>
         <div class="col-md-3 col-6">
           <button class="btn btn-danger float-right btn-sm mr-2 mb-1">Delete</button>
-          <button class="btn btn-success float-right btn-sm mr-2 mb-1">Add</button>
+          <button class="btn btn-success float-right btn-sm mr-2 mb-1" id="add-expense-button" data-toggle="modal" data-target="#add-expense-modal">Add</button>
+        </div>
+        <div class="modal fade" id="add-expense-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header" id="add-expense-modal-header">
+                <h5 class="modal-title">Add Expense</h5>
+                <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">x</span>
+                </button>
+              </div>
+              <div class="modal-body container-fluid">
+                <div class="row">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <div id="add-expense-container">
+                          <label for="add-expense-date">Date:</label>
+                          <input type="text" id="add-expense-date"/><br/>
+                          <label for="add-expense-description">Description:</label>
+                          <input type="text" id="add-expense-description"/><br/>
+                          <label for="add-expense-category">Category:</label>
+                          <select class="custom-select col-4" id="add-expense-category">  
+                            <option value="mileage">Mileage</option>
+                            <option value="mortgage">Mortgage</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="supplies/goods">Supplies/Goods</option>
+                            <option value="misc">Misc</option>
+                          </select>
+                          <br/>
+                          <label for="add-expense-amount">Amount:</label>
+                          <input type="text" id="add-expense-amount"/><br/>
+                          <div class="image-upload">
+                            <label for="add-expense-image">Image: &nbsp&nbsp&nbsp</label>
+                            <label for="add-expense-image">
+                                <i class="far fa-images"></i>
+                            </label>
+                            <input type="file" name="pic" accept="image/*" id="add-expense-image">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <!-- pop-up to verify new info to save?? -->
+                <!-- add jQuery click event to save -->
+                <button type="button" id="add-expense-save" class="btn btn-success btn-sm">Save</button>
+                <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -306,11 +358,7 @@
                     <th scope="col"><input type="checkbox"></th>
                     <td class="date">6/31/18</td>
                     <td class="description">Fridge</td>
-                    <td class="image-upload">
-                      <label for="file-input">
-                        <i class="far fa-images"></i>
-                      </label>
-                      <input type="file" name="pic" accept="image/*" id="file-input">
+                    <td class="expense-image">
                     </td>
                     <td class="category">Supplies/Goods</td>
                     <td>$3000</td>
@@ -319,11 +367,7 @@
                     <th scope="col"><input type="checkbox"></th>
                     <td class="date">7/1/18</td>
                     <td class="description">Rent paid</td>
-                    <td class="image-upload">
-                      <label for="file-input">
-                        <i class="far fa-images"></i>
-                      </label>
-                      <input type="file" name="pic" accept="image/*" id="file-input">
+                    <td class="expense-image">
                     </td>
                     <td class="category">Rent</td>
                     <td>$1500</td>
@@ -332,24 +376,7 @@
                     <th scope="col"><input type="checkbox"></th>
                     <td class="date">7/15/18</td>
                     <td class="description">Interest</td>
-                    <td class="image-upload">
-                      <label for="file-input">
-                        <i class="far fa-images"></i>
-                      </label>
-                      <input type="file" name="pic" accept="image/*" id="file-input">
-                    </td>
-                    <td class="category">Mortgage</td>
-                    <td>$2000</td>
-                  </tr>
-                  <tr>
-                    <th scope="col"><input type="checkbox"></th>
-                    <td> class="date"7/15/18</td>
-                    <td class="description">Interest</td>
-                    <td class="image-upload">
-                      <label for="file-input">
-                        <i class="far fa-images"></i>
-                      </label>
-                      <input type="file" name="pic" accept="image/*" id="file-input">
+                    <td class="expense-image">
                     </td>
                     <td class="category">Mortgage</td>
                     <td>$2000</td>
@@ -358,11 +385,7 @@
                     <th scope="col"><input type="checkbox"></th>
                     <td class="date">7/15/18</td>
                     <td class="description">Interest</td>
-                    <td class="image-upload">
-                      <label for="file-input">
-                        <i class="far fa-images"></i>
-                      </label>
-                      <input type="file" name="pic" accept="image/*" id="file-input">
+                    <td class="expense-image">
                     </td>
                     <td class="category">Mortgage</td>
                     <td>$2000</td>
@@ -371,11 +394,7 @@
                     <th scope="col"><input type="checkbox"></th>
                     <td class="date">7/15/18</td>
                     <td class="description">Interest</td>
-                    <td class="image-upload">
-                      <label for="file-input">
-                        <i class="far fa-images"></i>
-                      </label>
-                      <input type="file" name="pic" accept="image/*" id="file-input">
+                    <td class="expense-image">
                     </td>
                     <td class="category">Mortgage</td>
                     <td>$2000</td>
@@ -384,11 +403,7 @@
                     <th scope="col"><input type="checkbox"></th>
                     <td class="date">7/15/18</td>
                     <td class="description">Interest</td>
-                    <td class="image-upload">
-                      <label for="file-input">
-                        <i class="far fa-images"></i>
-                      </label>
-                      <input type="file" name="pic" accept="image/*" id="file-input">
+                    <td class="expense-image">
                     </td>
                     <td class="category">Mortgage</td>
                     <td>$2000</td>
@@ -396,15 +411,20 @@
                   <tr>
                     <th scope="col"><input type="checkbox"></th>
                     <td class="date">7/15/18</td>
-                    <td>Interest</td>
-                    <td class="image-upload">
-                      <label for="file-input">
-                        <i class="far fa-images"></i>
-                      </label>
-                      <input type="file" name="pic" accept="image/*" id="file-input">
+                    <td class="description">Interest</td>
+                    <td class="expense-image">
                     </td>
                     <td class="category">Mortgage</td>
                     <td>$2000</td>
+                  </tr>
+                  <tr>
+                    <th scope="col"><input type="checkbox"></th>
+                    <td class="date">7/15/18</td>
+                    <td class="description">Interest</td>
+                    <td class="expense-image">
+                    </td>
+                    <td class="category">Mortgage</td>
+                    <td class="amount">$2000</td>
                   </tr>
                 </tbody>
               </table>

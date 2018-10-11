@@ -6,13 +6,23 @@ body {
   background-image: url("../images/what-the-hex.png");
 }
 
-td.image-upload > input[type="file"] {
+.image-upload > input[type="file"] {
   display: none;
 }
 
 label[for="file-input"]:hover {
   cursor: pointer;
 }
+
+/* Keep image size to a maximum in table */
+/* 
+#expenses-table > td.expense-image{
+  max-width: 1rem;
+}
+
+#expenses-table > td.expense-image img{
+  max-width: 1rem;
+} */
 
 /* adding this margin so footer doesn't overlap container MC*/
 .prop-details-container {
@@ -24,7 +34,7 @@ label[for="file-input"]:hover {
 }
 
 #indiv-property-details-header,
-#edit-prop-modal-header {
+#edit-prop-modal-header, #add-expense-modal-header {
   background-color: #343a40;
   color: white;
 }
