@@ -31,7 +31,6 @@ $('#display-tenant-email').text(displayTenantEmail);
 $('#display-rental-amount').text(monthlyRentAmount);
 $('#display-lease-range').text(leaseDateRange);
 
-
 // Edit property info Modal Values
 $('input[name="edit-prop-address-street"]').val(street);
 $('input[name="edit-prop-address-street2"]').val(street2);
@@ -81,5 +80,29 @@ $("#submit-edit-property").on("submit", function(e){
   // updateState(landlords);
 });
 
+$("#add-expense-form").on("submit", function(e) {
+  e.preventDefault();
+  var $date = $("#add-expense-date").val();
+  var $description = $("#add-expense-description").val();
+  var $category = $("#add-expense-category-select").val();
+  var $amount = $("#add-expense-amount").val();
+  // var $image = 
+  if($category !== "mileage") {
+    landlord1.properties[0].expenses[$category].push({
+      date: $date,
+      description: $description,
+      amount: $amount,
+      // image: $image ? $image : null
+    })
+  } else {
+    landlord1.properties[0].expenses.mileage.push({
+      date: $date,
+      miles: $amount,
+      description: "Miles driven"
+    });
+  }
+});
 
-// EXPENSES SECTION
+$("#delete-expenses").on("click", function(e) {
+  $('table tr').has('input[type="checkbox"]:checked').remove();
+})
