@@ -19,11 +19,12 @@ label[for="file-input"]:hover {
   margin-bottom: 150px;
 }
 
-#indiv-property-details {
+#indiv-property-details-section {
   margin: 40px 0px 60px 0px;
 }
 
-#indiv-property-details-header {
+#indiv-property-details-header,
+#edit-prop-modal-header {
   background-color: #343a40;
   color: white;
 }
@@ -41,6 +42,16 @@ label[for="file-input"]:hover {
   margin-bottom: 15px;
 }
 
-#exp-nav-card, #exp-detail-card {
+#exp-nav-card,
+#exp-detail-card {
   padding: 0px 0px 10px 0px;
+}
+
+.close-modal {
+  color: white;
+}
+
+#edit-prop-details-button,
+#back-to-properties-button {
+  margin-bottom: 10px;
 }

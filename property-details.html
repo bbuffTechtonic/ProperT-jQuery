@@ -44,7 +44,7 @@
     </div>
   </nav>
   <div class="container prop-details-container">
-    <section id="indiv-property-details">
+    <section id="indiv-property-details-section">
       <div class="row">
         <div class="col-md-3">
           <img id="prop-image" class="img-fluid rounded mx-auto d-block" src="./images/ppty2.jpg" alt="photo of current property">
@@ -53,35 +53,33 @@
           <div class="card">
             <h5 id="indiv-property-details-header" class="card-header">Property Details</h5>
             <div class="card-body">
-              <!-- START HERE on 9/27 -->
               <div id="indiv-prop-address">
                 <h5 class="">123 Elm St.</h5>
                 <h5 class="">#305</h5>
                 <h5 class="">Denver, CO 80209</h5>
               </div>
               <br>
-              <div id="prop-specs">
-                <p id="tenant-name" class="card-text indiv-prop-spec">Current Tenant: John Williams</p>
-                <p id="tenant-email" class="card-text indiv-prop-spec">Current Tenant Email: jwilliams@jj.com</p>
-                <p id="rental-amount" class="card-text indiv-prop-spec">Monthly Rental Amount: $1,350.00</p>
-                <p id="lease-range" class="card-text indiv-prop-spec">Lease Date Range: 6/1/2018 - 5/31/2019</p>
+              <div id="display-prop-specs">
+                <p id="display-tenant-name" class="card-text indiv-prop-spec">Current Tenant: John Williams</p>
+                <p id="display-tenant-email" class="card-text indiv-prop-spec">Current Tenant Email: jwilliams@jj.com</p>
+                <p id="display-rental-amount" class="card-text indiv-prop-spec">Monthly Rental Amount: $1,350.00</p>
+                <p id="display-lease-range" class="card-text indiv-prop-spec">Lease Date Range: 6/1/2018 - 5/31/2019</p>
               </div>
               <br>
-              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-property-modal">Edit Details</button>
-              <a href="view-properties.html" class="btn btn-success btn-sm">Back to All Properties</a>
+              <button type="button" id="edit-prop-details-button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-property-modal">Edit Details</button>
+              <a href="view-properties.html" id="back-to-properties-button" class="btn btn-success btn-sm">Back to All Properties</a>
             </div>
           </div>
         </div>
       </div>
-
       <!-- Edit Property Modal -->
       <div class="modal fade" id="edit-property-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Edit Your Property</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+          <div class="modal-header" id="edit-prop-modal-header">
+            <h5 class="modal-title">Edit Your Property</h5>
+            <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">x</span>
             </button>
           </div>
           <div class="modal-body .container-fluid">
@@ -89,14 +87,14 @@
               <div class="col">
                 <div class="card">
                   <div class="card-body">
-                    <div id="edit-prop-address">
+                    <div id="edit-prop-address-container">
                       <!-- pull in info w/ jQuery -->
                       <h5 class="" id="edit-prop-address-street">123 Elm St.</h5>
                       <h5 class="" id="edit-prop-address-street2">#305</h5>
                       <h5 class="" id="edit-prop-address-city/state/zip">Denver, CO 80209</h5>
                     </div>
                     <br>
-                    <div id="edit-prop-specs">
+                    <div id="edit-prop-specs-container">
                       <p id="edit-tenant-name" class="card-text indiv-prop-spec">Current Tenant: </p>
                       <p id="edit-tenant-email" class="card-text indiv-prop-spec">Current Tenant Email: </p>
                       <p id="edit-rental-amount" class="card-text indiv-prop-spec">Monthly Rental Amount: </p>
@@ -108,7 +106,9 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" id="edit-prop-details-save"class="btn btn-success btn-sm">Save</button>
+            <!-- pop-up to verify new info to save?? -->
+            <!-- add jQuery click event to save -->
+            <button type="button" id="edit-prop-details-save" class="btn btn-success btn-sm">Save</button>
             <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
           </div>
         </div>
@@ -122,8 +122,8 @@
         </div>
         <div class="col-md-3 col"></div>
         <div class="col-md-3 col-6">
-          <button class="btn btn-outline-danger float-right btn-sm mr-2 mb-1">Delete</button>
-          <button class="btn btn-outline-success float-right btn-sm mr-2 mb-1">Add</button>
+          <button class="btn btn-danger float-right btn-sm mr-2 mb-1">Delete</button>
+          <button class="btn btn-success float-right btn-sm mr-2 mb-1">Add</button>
         </div>
       </div>
       <div class="row">
