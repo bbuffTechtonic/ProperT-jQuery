@@ -295,9 +295,9 @@ Year.prototype.loadChart = function(year) {
 
   totProfit = totIncome - totExpenses;
 
-  $( "#totIncome" ).html( totIncome );
-  $( "#totExpenses" ).html( totExpenses );
-  $( "#totProfit" ).html( totProfit );
+  $( "#totIncome" ).html( totIncome.toFixed(2) );
+  $( "#totExpenses" ).html( totExpenses.toFixed(2) );
+  $( "#totProfit" ).html( totProfit.toFixed(2) );
 
   return arrChartData; //Authors array from bookShelf
 };
