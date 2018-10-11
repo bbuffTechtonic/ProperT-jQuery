@@ -32,14 +32,12 @@ $('#display-rental-amount').text(monthlyRentAmount);
 $('#display-lease-range').text(leaseDateRange);
 
 
-// Edit property info Modal
+// Edit property info Modal Values
 $('input[name="edit-prop-address-street"]').val(street);
 $('input[name="edit-prop-address-street2"]').val(street2);
-
 $('input[name="edit-prop-address-city"]').val(getCity);
 $('input[name="edit-prop-address-state"]').val(getState);
 $('input[name="edit-prop-address-zip"]').val(getZip);
-
 $('input[name="edit-tenant-first-name"]').val(getTenantFirst);
 $('input[name="edit-tenant-last-name"]').val(getTenantLast);
 $('input[name="edit-tenant-email"]').val(getTenantEmail);
@@ -68,7 +66,15 @@ $("#submit-edit-property").on("submit", function(e){
 
 
   // var updatedPropertyAddress =
-  //
+
+  // var updatedTenantInfo = 
+
+
+
+
+
+
+
   // var newLandlord = new User(firstName, lastName, email, password);
   // landlords.push(newLandlord);
   // alert("A new landlord user was created in localStorage");
