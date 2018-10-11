@@ -41,7 +41,7 @@
           </div>
         </li>
       </ul>
-      <a href="landing.html" id="logout-button" class="btn btn-outline-success btn-sm">Logout</a>
+      <a href="#confirm-logout-modal" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#confirm-logout-modal">Logout</a>
     </div>
     <!-- Add Property Modal -->
     <div class="modal fade" id="add-property-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
@@ -181,6 +181,30 @@
         </div>
       </div>
     </div>
+    <!-- Confirm Logout Modal -->
+    <div class="modal fade" id="confirm-logout-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header" id="confirm-logout-modal-header">
+            <h5 class="modal-title"></h5>
+            <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          <div class="modal-body container-fluid">
+            <div class="row">
+              <div class="col">
+                <h5>Are you sure you want to logout?</h5>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="logout-button" type="button" class="btn btn-success btn-sm" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
   <div class="container prop-details-container">
     <section id="indiv-property-details-section">
@@ -230,7 +254,7 @@
                       <!-- add more validation??? -->
                       <!-- add labels/arias -->
                       <!-- copy submit button from sonali's add property modal on dashboard i think... -->
-                      <form>
+                      <form id="edit-prop-form">
                         <div class="row">
                           <div class="col">
                             <div class="form-row">
