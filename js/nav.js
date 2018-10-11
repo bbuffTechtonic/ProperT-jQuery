@@ -16,7 +16,8 @@ $("#add-new-property").on("submit", function(e){
   tenantInfo2.start = $(this)[0][9].value;
   tenantInfo2.end = $(this)[0][9].value;
   console.log(tenantInfo2);
-  //$('#add-property-modal').modal('hide');
+
+  $('#add-property-modal').modal('hide');
 });
 
 
