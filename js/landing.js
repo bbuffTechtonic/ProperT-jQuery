@@ -6,5 +6,6 @@ $("#signupForm").on("submit", function(e){
   var password = $('input[name="signUpPassword"]').val();
   var newLandlord = new User(firstName, lastName, email, password);
   landlords.push(newLandlord);
+  alert("A new landlord user was created in localStorage");
   updateState(landlords);
 });
