@@ -97,7 +97,7 @@ var expenses1 = {
 
 var landlords = [];
 var property1 = new Property(PropertyAddress1,tenantInfo1,expenses1);
-var landlord1 = new User("Patrick","Smith","patrick@yoohoo.org","password","../images/userOne.jpeg");
+var landlord1 = new User("Patrick","Smith","patrick@yoohoo.org","password","./images/userOne.jpeg");
 landlord1.properties.push(property1);
 landlords.push(landlord1);
 //Localstorage stuff
