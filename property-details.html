@@ -213,7 +213,7 @@
       </div>
       <!-- Edit Property Modal -->
       <div class="modal fade" id="edit-property-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header" id="edit-prop-modal-header">
               <h5 class="modal-title">Edit Your Property</h5>
@@ -226,19 +226,77 @@
                 <div class="col">
                   <div class="card">
                     <div class="card-body">
-                      <div id="edit-prop-address-container">
-                        <!-- pull in info w/ jQuery -->
-                        <h5 class="" id="edit-prop-address-street">123 Elm St.</h5>
-                        <h5 class="" id="edit-prop-address-street2">#305</h5>
-                        <h5 class="" id="edit-prop-address-city/state/zip">Denver, CO 80209</h5>
-                      </div>
-                      <br>
-                      <div id="edit-prop-specs-container">
-                        <p id="edit-tenant-name" class="card-text indiv-prop-spec">Current Tenant: </p>
-                        <p id="edit-tenant-email" class="card-text indiv-prop-spec">Current Tenant Email: </p>
-                        <p id="edit-rental-amount" class="card-text indiv-prop-spec">Monthly Rental Amount: </p>
-                        <p id="edit-lease-range" class="card-text indiv-prop-spec">Lease Date Range: </p>
-                      </div>
+                      <!-- add icons??? -->
+                      <!-- add more validation??? -->
+                      <!-- add labels/arias -->
+                      <!-- copy submit button from sonali's add property modal on dashboard i think... -->
+                      <form>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-row">
+                              <div class="form-group col street">
+                                <div class="input-group street">
+                                  <input type="text" class="form-control" name="edit-prop-address-street" id="edit-prop-address-street" placeholder="Street Address">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col street2">
+                                <div class="input-group street2">
+                                  <input type="text" class="form-control" name="edit-prop-address-street2" id="edit-prop-address-street2" placeholder="Street Address">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col-md-6">
+                                <div class="form-group tenant-first">
+                                  <div class="input-group tenant-first">
+                                    <input type="text" class="form-control" name="edit-tenant-first-name" id="edit-tenant-first-name" placeholder="Tenant First Name">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group tenant-last">
+                                  <div class="input-group tenant-last">
+                                    <input type="text" class="form-control" name="edit-tenant-last-name" id="edit-tenant-last-name" placeholder="Tenant Last Name">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col tenant-email">
+                                <div class="input-group tenant-email">
+                                  <input type="email" class="form-control" name="edit-tenant-email" id="edit-tenant-email" placeholder="Tenant Email">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col rental-amount">
+                                <div class="input-group rental-amount">
+                                  <input type="text" class="form-control" name="edit-rental-amount" id="edit-rental-amount" placeholder="Rental Amount">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col-md-6">
+                                <div class="form-group lease-start">
+                                  <div class="input-group lease-start">
+                                    <input type="text" class="form-control" name="edit-lease-start" id="edit-lease-start" placeholder="Lease Start Date">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group lease-end">
+                                  <div class="input-group lease-end">
+                                    <input type="text" class="form-control" name="edit-lease-end" id="edit-lease-end" placeholder="Lease End Date">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="btn btn-success btn-sm" id="submit-edit-property" type="submit">Save Changes</button>
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -247,6 +305,7 @@
             <div class="modal-footer">
               <!-- pop-up to verify new info to save?? -->
               <!-- add jQuery click event to save -->
+              <!-- change this to match Sonali's add prop footer -->
               <button type="button" id="edit-prop-details-save" class="btn btn-success btn-sm">Save</button>
               <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
             </div>
