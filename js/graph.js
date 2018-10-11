@@ -38,6 +38,11 @@ Year.prototype.barChart = function(year) {
 
 // initialize the chart and bar values
 function chartSettings(arrData) {
+
+    //canvas.height = canvas.height;
+    //canvas.width = canvas.width;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
     // chart properties
     cMargin = 25;
     cSpace = 60;
@@ -271,6 +276,13 @@ Year.prototype.loadChart = function(year) {
   var totIncome = 0;
   var totExpenses = 0;
   var totProfit = 0;
+  arrChartData = [];
+
+  if (!this.myYear) {
+    alert("There is no Data available");
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    return false;
+  }
 
   for (var i = 0;i < this.myYear.length;i++) {
 
@@ -342,7 +354,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   window.sep2018_Two = new propMonth("Property Two","Sep", 750, 1050);
   window.oct2018_Two = new propMonth("Property Two","Oct", 500, 1050);
 
-  gYear.barChart('p2y2018');
+  var selYear = $('#my-year').val();
+  gYear.barChart(selYear);
 
 });
 
@@ -366,7 +379,7 @@ Year.prototype.cProp1Y18 = function()
   var dehydratedYear = JSON.stringify(storeYear);
 
   //save it with local storage
-  window.localStorage.setItem('p1y2018', dehydratedYear);
+  window.localStorage.setItem('2018', dehydratedYear);
 
   return true; //True if not already added - false if it already added
 };
@@ -393,7 +406,7 @@ Year.prototype.cProp1Y17 = function()
   var dehydratedYear = JSON.stringify(storeYear);
 
   //save it with local storage
-  window.localStorage.setItem('p1y2017', dehydratedYear);
+  window.localStorage.setItem('2017', dehydratedYear);
 
   return true; //True if not already added - false if it already added
 };
