@@ -59,29 +59,23 @@
                   <div class="card-body">
                     <form id="add-new-property">
                       <div class="form row">
-                        <div class="form-group col-md-12">
-                          <label for="inputAddress">Address 1</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                        </div>
-                      </div>
-                      <div class="form-row">
                         <div class="form-group col-md-9">
-                          <label for="inputAddress2">Address 2</label>
-                          <input type="text" class="form-control" id="inputAddress2" placeholder="Address">
+                          <label for="address-1">Address 1</label>
+                          <input type="text" name="address-1" class="form-control" id="address-1" placeholder="1234 Main St">
                         </div>
                         <div class="form-group col-md-3">
-                          <label for="apartmentNum">Apt #</label>
-                          <input type="text" class="form-control" id="apartmentNum" placeholder="Apt B">
+                          <label for="address-2">Address 2</label>
+                          <input type="text" name="address-2" class="form-control" id="address-2" placeholder="Apt 2A">
                         </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group col-md-6">
-                          <label for="inputCity">City</label>
-                          <input type="text" class="form-control" id="inputCity">
+                          <label for="city">City</label>
+                          <input type="text" name="city" class="form-control" id="city">
                         </div>
                         <div class="form-group col-md-4">
-                          <label for="inputState">State</label>
-                          <select id="inputState" class="form-control">
+                          <label for="state">State</label>
+                          <select id="state" name="state" class="form-control">
                           <option value="" selected="selected">Select a State</option>
                           <option value="AL">Alabama</option>
                           <option value="AK">Alaska</option>
@@ -137,40 +131,41 @@
                           </select>
                         </div>
                         <div class="form-group col-md-2">
-                          <label for="inputZip">Zip</label>
-                          <input type="text" class="form-control" id="inputZip">
+                          <label for="zip">Zip</label>
+                          <input type="text" name="zip" class="form-control" id="zip">
                         </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="propertyImage">Upload Image</label>
-                            <input type="file" class="form-control-file" id="propertyImage">
+                            <input type="file" name="propertyImage" class="form-control-file" id="propertyImage">
                         </div>
                       </div>
                       <div class="form-row">
-                        <div class="form-group col-md-12">
-                          <label for="inputAddress">Tenant Name</label>
-                          <input type="text" class="form-control" id="tenant-name" placeholder="John Williams">
+                        <div class="form-group col-md-4">
+                          <label for="tenant-name">Tenant Name</label>
+                          <input type="text" name="tenant-name" class="form-control" id="tenant-name" placeholder="John Williams">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="tenant-email">Tenant Email</label>
+                          <input type="email" name="tenant-email" class="form-control" id="tenant-email" placeholder="jwilliams@jj.com">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="rental-amount">Monthly Rental Amount ($)</label>
+                          <input type="text" name="rental-amount" class="form-control" id="rental-amount" placeholder="1,350.00">
                         </div>
                       </div>
                       <div class="form-row">
-                        <div class="form-group col-md-12">
-                          <label for="inputAddress">Tenant Email</label>
-                          <input type="email" class="form-control" id="tenant-email" placeholder="jwilliams@jj.com">
+                        <div class="form-group col-md-3">
+                          <label for="lease-start">Lease Start Date:</label>
+                          <input type="text" name="lease-start" class="form-control" id="lease-start" placeholder="6/1/2018">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="lease-end">Lease End Date:</label>
+                          <input type="text" name="lease-end" class="form-control" id="lease-end" placeholder="5/31/2019">
                         </div>
                       </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-12">
-                          <label for="inputAddress">Monthly Rental Amount ($)</label>
-                          <input type="text" class="form-control" id="rental-amount" placeholder="1,350.00">
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-12">
-                          <label for="inputAddress">Lease Date Range:</label>
-                          <input type="text" class="form-control" id="lease-range" placeholder="6/1/2018 - 5/31/2019">
-                        </div>
-                      </div>
+                      <button type="button" id="add-prop-save" class="btn btn-success btn-sm">Save</button>
                     </form>
                   </div>
                 </div>
@@ -180,7 +175,6 @@
           <div class="modal-footer">
             <!-- pop-up to verify new info to save?? -->
             <!-- add jQuery click event to save -->
-            <button type="button" id="add-prop-save" class="btn btn-success btn-sm">Save</button>
             <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
           </div>
         </div>
@@ -261,5 +255,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="js/util.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html>
