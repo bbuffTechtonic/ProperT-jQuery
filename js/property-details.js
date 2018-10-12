@@ -90,36 +90,56 @@ $("#add-expense-form").on("submit", function(e) {
   var $amount = $("#add-expense-amount").val();
   // var $image = 
   if($category !== "mileage") {
-    landlord1.properties[0].expenses[$category].push({
+    landlord1.rentals[0].expenses[$category].push({
       date: $date,
       description: $description,
       amount: $amount,
       // image: $image ? $image : null
     })
   } else {
-    landlord1.properties[0].expenses.mileage.push({
+    landlord1.rentals[0].expenses.mileage.push({
       date: $date,
-      miles: $amount,
+      amount: $amount,
       description: "Miles driven"
     });
   }
+  $('#add-expense-modal').modal('hide');
 });
 
 $("#delete-expenses").on("click", function(e) {
   $('table tr').has('input[type="checkbox"]:checked').remove();
-  // localStorage.removeItem($());
 })
-
-// Select all checkboxes in table 
-
-// $("thead input[type='checkbox']").on("click", function(e) {
-//   $(".expense-row").each(function(){
-//     $(this).
-//   })
-// });
 
 // EXPENSES SECTION
 
 $('#check-all').click(function () {
     $('.check').prop('checked', $(this).prop('checked'));
   });
+
+
+$("#v-pills-tab a").on("click", function() {
+  $("a.active").removeClass("active bg-success").addClass("text-success");
+  $(this).addClass("active bg-success").removeClass("text-success");
+  $("tbody").children().remove();
+  var $selectedExpense = $(this).text().toLowerCase();
+  var $category = $(this).text();
+  var storedExpenses = landlord1.rentals[0].expenses;
+  var currentExpenses;
+  if($selectedExpense === "all") {
+    currentExpenses = storedExpenses;
+  } else {
+    currentExpenses = storedExpenses[$selectedExpense];
+  }
+  $.each(currentExpenses, function(index) {
+    $tr = $("<tr class='expense-row'></tr>");
+    $tr.append("<th scope='col'><input type='checkbox'></th>");
+    $tr.append("<td class='date'>" + $(this).date + "</td>")
+    $tr.append("<td class='description'>" + $(this).description + "</td>")
+    $tr.append("<td class='expense-image'>" + $(this).image + "</td>")
+    $tr.append("<td class='category'>" + $category + "</td>")
+    $tr.append("<td class='amount'>" + $(this).amount + "</td>")
+    console.log($(this).amount);
+    $("tbody").append($tr);
+  })
+});
+>>>>>>> Stashed changes
