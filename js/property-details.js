@@ -63,7 +63,9 @@ $("#submit-edit-property").on("submit", function(e){
   var monthlyRent = $('input[name="edit-rental-amount"]').val();
   var leaseStart = $('input[name="edit-lease-start"]').val();
   var leaseEnd = $('input[name="edit-lease-end"]').val();
-)};
+});
+
+
 //EXPENSES SECTION
 
 $("#search-input").keyup(function () {
@@ -125,6 +127,7 @@ $("#v-pills-tab a").on("click", function() {
   } else {
     currentExpenses = storedExpenses[$selectedExpense];
   }
+
   $.each(currentExpenses, function(index) {
     $tr = $("<tr class='expense-row'></tr>");
     $tr.append("<th scope='col'><input type='checkbox'></th>");
@@ -134,9 +137,6 @@ $("#v-pills-tab a").on("click", function() {
     $tr.append("<td class='category'>" + $category + "</td>")
     $tr.append("<td class='amount'></td>")
     $("tbody").append($tr);
-  })
+  });
 });
-
-
-
 });
