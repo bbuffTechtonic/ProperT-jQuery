@@ -13,7 +13,8 @@ $('#signupForm').on('submit', function (e) {
 $('#signinForm').on('submit', function (e) {
   e.preventDefault();
   for (var i = 0; i < landlords.length; i++) {
-    if (landlords[i].email === $('#signInEmail').val() &&  landlords[i].password === $('#signInPassword').val())
+    if (landlords[i].email === $('#signInEmail').val() &&
+    landlords[i].password === $('#signInPassword').val())
     {
       location.href = 'dashboard.html';
       return;
@@ -21,4 +22,17 @@ $('#signinForm').on('submit', function (e) {
   }
 
   alert('Email or Password do not match');
+});
+
+$('#forgotPassForm').on('submit', function (e) {
+  e.preventDefault();
+  for (var i = 0; i < landlords.length; i++) {
+    if (landlords[i].email === $('#forgotPassEmail').val())
+    {
+      alert('A link to reset your password has been sent to ' + $('#forgotPassEmail').val());
+      return;
+    }
+  }
+
+  alert('Email not registered');
 });

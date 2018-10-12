@@ -138,16 +138,16 @@
           <div class="card collapse forgot-collapse">
             <div class="card-body pb-2">
               <h6 class="reset-instructions">Enter your email address and we will send you a link to reset your password</h6>
-              <form>
+              <form id="forgotPassForm">
                 <div class="form group email">
                   <div class="input-group email">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="inputGroupPrepend2"><i class="far fa-envelope"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="validationDefault02" placeholder="Email" aria-describedby="inputGroupPrepend2" required>
+                    <input type="email" class="form-control" id="forgotPassEmail" placeholder="Email" aria-describedby="inputGroupPrepend2" required>
                   </div>
                 </div>
-                <button type="sign-in" class="btn btn-success btn-block mt-3">Send Email</button>
+                <button type="submit" class="btn btn-success btn-block mt-3">Send Email</button>
                 <div class="new user text-center">
                   <hr class="mb-1">
                   <small>
