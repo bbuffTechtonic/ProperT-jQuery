@@ -31,16 +31,18 @@ User.prototype.getUniqueAdd = function()
   // Restore bookShelf from Local Storage
 
   //get 'bookShelf' and rehydrate it  (convert it back JSON)
-  var rUser = JSON.parse(window.localStorage.getItem('user'));
-  console.log(rUser);
-  var uniqAddresses = [];
-  var thisAdd;
+  // var rUser = JSON.parse(window.localStorage.getItem('user'));
+  // console.log(rUser);
+  // var uniqAddresses = [];
+  // var thisAdd;
 
-  for (var i = 0;i < rUser[0].rentals.length;i++) {
+  var rUser = window.landlord1;
+
+  for (var i = 0;i < rUser.rentals.length;i++) {
 
     //thisAdd = rUser[0].properties[i].address.address1;
 
-    $("#navProperties").append('<a class="dropdown-item" href="property-details.html">' + rUser[0].rentals[i].address.address1 + '</a>');
+    $("#navProperties").append('<a class="dropdown-item" href="property-details.html">' + rUser.rentals[i].address.address1 + '</a>');
 
     //uniqAddresses.push(thisAdd);
 

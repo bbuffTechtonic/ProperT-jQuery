@@ -33,11 +33,13 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Property Details
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div id="navProperties" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          </div>
+          <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="property-details.html">2 Water Street</a>
             <a class="dropdown-item" href="property-details.html">20 Ave De Gaulle</a>
             <a class="dropdown-item" href="property-details.html">34 Sandringham Place</a>
-          </div>
+          </div> -->
         </li>
       </ul>
       <a href="#confirm-logout-modal" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#confirm-logout-modal">Logout</a>
@@ -209,7 +211,10 @@
     <div class="row align-items-center">
       <div class="col-12 col-lg-6">
         <div class="card margin-bottom">
-          <img class="img-fluid centered" id="property-chart" src="images/indiv-profit-loss.jpg">
+          <canvas id="bchart" height="400" width="600">
+            Your browser does not support HTML5 Canvas
+          </canvas>
+          <!--<img class="img-fluid centered" id="property-chart" src="images/indiv-profit-loss.jpg">-->
         </div>
       </div>
       <div class="col-12 col-lg-6">
@@ -279,6 +284,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="js/util.js"></script>
-    <script src="js/nav.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/graph.js"></script>
 </body>
 </html>

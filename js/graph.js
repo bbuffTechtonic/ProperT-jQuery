@@ -24,7 +24,13 @@ Year.prototype.barChart = function(year) {
         context = canvas.getContext('2d');
     }
 
-    this.loadChart(year);
+    if (!year) {
+      this.loadChart('2018');
+    } else {
+      this.loadChart(year);
+    }
+
+    //this.loadChart(year);
 
     var arrData = arrChartData;
 
@@ -360,7 +366,6 @@ document.addEventListener("DOMContentLoaded", function(e){
   var selYear = $('#my-year').val();
   gYear.barChart(selYear);
 
-  // landlord1.getUniqueAdd();
   //landlord1.getUniqueAdd();
 
 });

@@ -155,4 +155,6 @@ $( document ).ready(function() {
   window.landlord1 = new User("Patrick","Smith","patrick@yoohoo.org","password","./images/userOne.jpeg");
   landlord1.loadRentals();
   landlords.push(landlord1);
+  landlord1.getUniqueAdd();
+  
 });
