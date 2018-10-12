@@ -480,6 +480,20 @@ Year.prototype.restoreCalendar = function(year)
   return this.myYear;
 }
 
+Year.prototype.restoreUser = function()
+{
+  // Restore bookShelf from Local Storage
+
+  var rUser;
+
+  //get 'bookShelf' and rehydrate it  (convert it back JSON)
+  var rehydratedYear = JSON.parse(window.localStorage.getItem('user'));
+
+  rUser = rehydratedYear;
+
+  return rUser;
+}
+
 function Year()
 {
   this.myYear = new Array();
