@@ -14,6 +14,7 @@
   }
 })();
 
+var landlords = [];
 //Add a rental
 User.prototype.addRental = function(address, tenantInfo) {
   // for (var i = 0; i < this.rentals.length; i++){
@@ -153,4 +154,5 @@ User.prototype.loadRentals = function (){
 $( document ).ready(function() {
   window.landlord1 = new User("Patrick","Smith","patrick@yoohoo.org","password","./images/userOne.jpeg");
   landlord1.loadRentals();
+  landlords.push(landlord1);
 });
