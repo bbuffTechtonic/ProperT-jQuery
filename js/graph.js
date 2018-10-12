@@ -360,7 +360,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   var selYear = $('#my-year').val();
   gYear.barChart(selYear);
 
-  property1.getUniqueAdd();
+  // landlord1.getUniqueAdd();
+  //landlord1.getUniqueAdd();
 
 });
 
