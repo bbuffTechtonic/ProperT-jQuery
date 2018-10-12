@@ -25,3 +25,30 @@ $("#add-new-property").on("submit", function(e){
 
 var property2 = new Property(PropertyAddress2,tenantInfo2);
 landlord1.properties.push(property2);
+
+
+Property.prototype.getUniqueAdd = function()
+{
+  // Restore bookShelf from Local Storage
+
+  var rUser;
+
+  //get 'bookShelf' and rehydrate it  (convert it back JSON)
+  var rehydratedYear = JSON.parse(window.localStorage.getItem('user'));
+
+  rUser = rehydratedYear;
+  var uniqAddresses = [];
+  var thisAdd;
+
+  for (var i = 0;i < rUser[0].properties.length;i++) {
+
+    //thisAdd = rUser[0].properties[i].address.address1;
+
+    $("#navProperties").append('<a class="dropdown-item" href="property-details.html">' + rUser[0].properties[i].address.address1 + '</a>');
+
+    //uniqAddresses.push(thisAdd);
+
+  }
+
+  return uniqAddresses;
+}

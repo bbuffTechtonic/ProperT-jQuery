@@ -360,6 +360,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   var selYear = $('#my-year').val();
   gYear.barChart(selYear);
 
+  property1.getUniqueAdd();
+
 });
 
 Year.prototype.cProp1Y18 = function()
@@ -478,20 +480,6 @@ Year.prototype.restoreCalendar = function(year)
   this.myYear = rehydratedYear;
 
   return this.myYear;
-}
-
-Year.prototype.restoreUser = function()
-{
-  // Restore bookShelf from Local Storage
-
-  var rUser;
-
-  //get 'bookShelf' and rehydrate it  (convert it back JSON)
-  var rehydratedYear = JSON.parse(window.localStorage.getItem('user'));
-
-  rUser = rehydratedYear;
-
-  return rUser;
 }
 
 function Year()
