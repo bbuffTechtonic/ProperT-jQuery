@@ -8,7 +8,7 @@ var cityStateZip = landlord1.properties[0].address.city + ", " + landlord1.prope
 
 var tenantName = "Current Tenant: " + landlord1.properties[0].tenantInfo.firstName + " " + landlord1.properties[0].tenantInfo.lastName;
 var displayTenantEmail = "Current Tenant Email: " + landlord1.properties[0].tenantInfo.email;
-var monthlyRentAmount = " Monthly Rental Amount: $" + landlord1.properties[0].tenantInfo.monthlyRent;
+var monthlyRentAmount = "Monthly Rental Amount: $" + landlord1.properties[0].tenantInfo.monthlyRent;
 var leaseDateRange = "Lease Date Range: " + landlord1.properties[0].tenantInfo.leaseStart + " - " + landlord1.properties[0].tenantInfo.leaseEnd;
 
 var getTenantFirst = landlord1.properties[0].tenantInfo.firstName;
@@ -77,3 +77,7 @@ $("#submit-edit-property").on("submit", function(e){
 
 
 // EXPENSES SECTION
+
+$('#check-all').click(function () {
+    $('.check').prop('checked', $(this).prop('checked'));
+  });
