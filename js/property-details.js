@@ -1,6 +1,6 @@
 // PROPERTY DETAILS SECTION
 
-console.log(landlord1.properties[0]);
+// console.log(landlord1.properties[0]);
 
 var street = landlord1.properties[0].address.address1;
 var street2 = landlord1.properties[0].address.address2;
@@ -30,7 +30,6 @@ $('#display-tenant-name').text(tenantName);
 $('#display-tenant-email').text(displayTenantEmail);
 $('#display-rental-amount').text(monthlyRentAmount);
 $('#display-lease-range').text(leaseDateRange);
-
 
 // Edit property info Modal Values
 $('input[name="edit-prop-address-street"]').val(street);
@@ -65,16 +64,59 @@ $("#submit-edit-property").on("submit", function(e){
   var leaseEnd = $('input[name="edit-lease-end"]').val();
 
 
-  var updatedPropertyAddress = {};
+  // var updatedPropertyAddress =
 
-  var updatedTenantInfo = {};
-  //
+  // var updatedTenantInfo = 
+
+
+
+
+
+
+
   // var newLandlord = new User(firstName, lastName, email, password);
   // landlords.push(newLandlord);
   // alert("A new landlord user was created in localStorage");
   // updateState(landlords);
 });
 
+//EXPENSES SECTION
+
+$("#add-expense-form").on("submit", function(e) {
+  e.preventDefault();
+  var $date = $("#add-expense-date").val();
+  var $description = $("#add-expense-description").val();
+  var $category = $("#add-expense-category-select").val();
+  var $amount = $("#add-expense-amount").val();
+  // var $image = 
+  if($category !== "mileage") {
+    landlord1.properties[0].expenses[$category].push({
+      date: $date,
+      description: $description,
+      amount: $amount,
+      // image: $image ? $image : null
+    })
+  } else {
+    landlord1.properties[0].expenses.mileage.push({
+      date: $date,
+      miles: $amount,
+      description: "Miles driven"
+    });
+  }
+});
+
+$("#delete-expenses").on("click", function(e) {
+  $('table tr').has('input[type="checkbox"]:checked').remove();
+  // localStorage.removeItem($());
+})
+
+// Select all checkboxes in table 
+
+// $("thead input[type='checkbox']").on("click", function(e) {
+//   $(".expense-row").each(function(){
+//     $(this).
+//   })
+// });
 
 // EXPENSES SECTION
 
