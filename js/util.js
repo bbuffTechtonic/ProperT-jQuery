@@ -16,7 +16,7 @@
 
 var landlords = [];
 //Add a rental
-User.prototype.addRental = function(address, tenantInfo) {
+User.prototype.addRental = function(address, tenantInfo, expenses) {
   // for (var i = 0; i < this.rentals.length; i++){
   //   console.log("In this loop");
   //   console.log(this.rentals);
@@ -24,16 +24,16 @@ User.prototype.addRental = function(address, tenantInfo) {
   //     return false;
   //   }
   // }
-  var expenses =
-  {
-    mileage: [],
-    mortgage: {},
-    maintenance: [],
-    suppliesGoods: [],
-    misc:[],
-    hoa:[],
-    rent:[]
-  };
+  // var expenses =
+  // {
+  //   mileage: [],
+  //   mortgage: {},
+  //   maintenance: [],
+  //   suppliesGoods: [],
+  //   misc:[],
+  //   hoa:[],
+  //   rent:[]
+  // };
   this.rentals.push({address, tenantInfo, expenses});
   this.updateState();
   return true;
@@ -73,11 +73,13 @@ var expenses1Obj = {
   mileage: [
     {
       date: "7/5/2018",
-      miles: 25
+      amount: 25,
+      description: "Miles driven"
     },
     {
       date: "8/18/2018",
-      miles: 25
+      amount: 25,
+      description: "Miles driven"
     }
   ],
   mortgage: {
