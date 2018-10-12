@@ -144,7 +144,7 @@ User.prototype.loadRentals = function (){
   var rentalProperties = JSON.parse(localStorage.getItem("rentals"));
   if(rentalProperties){
     for (var i = 0; i< rentalProperties.length; i++) {
-      console.log(rentalProperties[i].address, rentalProperties[i].tenantInfo, rentalProperties[i].expenses);
+      //console.log(rentalProperties[i].address, rentalProperties[i].tenantInfo, rentalProperties[i].expenses);
       this.addRental(rentalProperties[i].address, rentalProperties[i].tenantInfo, rentalProperties[i].expenses);
     }
   }
