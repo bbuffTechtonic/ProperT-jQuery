@@ -110,8 +110,6 @@ $("#delete-expenses").on("click", function(e) {
   $('table tr').has('input[type="checkbox"]:checked').remove();
 })
 
-// EXPENSES SECTION
-
 $('#check-all').click(function () {
     $('.check').prop('checked', $(this).prop('checked'));
   });
@@ -142,4 +140,3 @@ $("#v-pills-tab a").on("click", function() {
     $("tbody").append($tr);
   })
 });
->>>>>>> Stashed changes

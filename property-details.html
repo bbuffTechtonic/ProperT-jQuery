@@ -348,7 +348,6 @@
           <button class="btn btn-danger float-right btn-sm mr-2 mb-1" id="delete-expenses">Delete</button>
           <button class="btn btn-success float-right btn-sm mr-2 mb-1" id="add-expense-button" data-toggle="modal" data-target="#add-expense-modal">Add</button>
         </div>
-        <form id="add-expense-form">
         <div class="modal fade" id="add-expense-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -358,6 +357,7 @@
                   <span aria-hidden="true">x</span>
                 </button>
               </div>
+              <form id="add-expense-form">
                 <div class="modal-body container-fluid">
                   <div class="row">
                     <div class="col">
@@ -392,11 +392,11 @@
                     </div>
                   </div>
                 </div>
+                <button type="submit" id="add-expense-save" class="btn btn-success btn-sm">Save</button>
               </form>
               <div class="modal-footer">
                 <!-- pop-up to verify new info to save?? -->
                 <!-- add jQuery click event to save -->
-                <button type="submit" id="add-expense-save" class="btn btn-success btn-sm">Save</button>
                 <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
               </div>
             </div>
