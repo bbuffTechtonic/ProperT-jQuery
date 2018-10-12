@@ -21,6 +21,9 @@ $("#add-new-property").on("submit", function(e){
   console.log(tenantInfo2);
 
   $('#add-property-modal').modal('hide');
+  var property2 = new Property(PropertyAddress2,tenantInfo2);
+  landlord1.properties.push(property2);
+
 });
 
 var property2 = new Property(PropertyAddress2,tenantInfo2);
