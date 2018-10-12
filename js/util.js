@@ -1,7 +1,7 @@
 (function() {
   var instance;
   User = function(firstName, lastName, email, password, avatar) {
-    if (instance) { //if a instance of library already exists this will point the newly made library to the Singleton instance
+    if (instance) {
       return instance;
     }
     this.firstName = firstName;
@@ -10,11 +10,13 @@
     this.password = password;
     this.avatar = avatar;
     this.rentals = [];
-    instance = this; //if a instance of library does not yet exist this will get and set the instance name for the new library
+    instance = this;
   }
 })();
 
 var landlords = [];
+window.landlord1 = new User("Patrick","Smith","patrick@yoohoo.org","password","./images/userOne.jpeg");
+
 //Add a rental
 User.prototype.addRental = function(address, tenantInfo, expenses) {
   // for (var i = 0; i < this.rentals.length; i++){
