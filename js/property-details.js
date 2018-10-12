@@ -66,7 +66,7 @@ $("#submit-edit-property").on("submit", function(e){
 
   // var updatedPropertyAddress =
 
-  // var updatedTenantInfo = 
+  // var updatedTenantInfo =
 
 
 
@@ -82,13 +82,26 @@ $("#submit-edit-property").on("submit", function(e){
 
 //EXPENSES SECTION
 
+$("#search-input").keyup(function () {
+  var value = this.value.toLowerCase().trim();
+  $("table tr").each(function (index) {
+    if (!index) return;
+    $(this).find("td").each(function () {
+      var id = $(this).text().toLowerCase().trim();
+      var notFound = (id.indexOf(value) == -1);
+      $(this).closest('tr').toggle(!notFound);
+      return notFound;
+    });
+  });
+});
+
 $("#add-expense-form").on("submit", function(e) {
   e.preventDefault();
   var $date = $("#add-expense-date").val();
   var $description = $("#add-expense-description").val();
   var $category = $("#add-expense-category-select").val();
   var $amount = $("#add-expense-amount").val();
-  // var $image = 
+  // var $image =
   if($category !== "mileage") {
     landlord1.rentals[0].expenses[$category].push({
       date: $date,
