@@ -14,17 +14,8 @@
   }
 })();
 
-// //User Object
-// function User(firstName, lastName, email, password, avatar) {
-//   this.firstName = firstName;
-//   this.lastName = lastName;
-//   this.email = email;
-//   this.password = password;
-//   this.avatar = avatar;
-//   this.properties = [];
-// }
 //Add a rental
-User.prototype.addRental = function(address, tenantInfo, expenses) {
+User.prototype.addRental = function(address, tenantInfo) {
   // for (var i = 0; i < this.rentals.length; i++){
   //   console.log("In this loop");
   //   console.log(this.rentals);
@@ -32,6 +23,16 @@ User.prototype.addRental = function(address, tenantInfo, expenses) {
   //     return false;
   //   }
   // }
+  var expenses =
+  {
+    mileage: [],
+    mortgage: {},
+    maintenance: [],
+    suppliesGoods: [],
+    misc:[],
+    hoa:[],
+    rent:[]
+  };
   this.rentals.push({address, tenantInfo, expenses});
   this.updateState();
   return true;
@@ -48,12 +49,6 @@ User.prototype.addRental = function(address, tenantInfo, expenses) {
 //   this.updateState();
 //   return rentalsAdded;
 // };
-
-// function Rental(oAddress, oTenantInfo, oExpenses) {
-//   this.address = oAddress || {};
-//   this.tenantInfo = oTenantInfo || {};
-//   this.expenses = oExpenses || {};
-// }
 
 // //Property Object
 var prop1Address = {
