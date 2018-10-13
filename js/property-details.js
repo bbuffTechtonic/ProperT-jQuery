@@ -1,11 +1,8 @@
 $( document ).ready(function() {
   // PROPERTY DETAILS SECTION
-//console.log(landlord1);
-
 var street = landlord1.rentals[0].address.address1;
 var street2 = landlord1.rentals[0].address.address2;
 var cityStateZip = landlord1.rentals[0].address.city + ", " + landlord1.rentals[0].address.state + " " + landlord1.rentals[0].address.zip;
-
 var tenantName = "Current Tenant: " + landlord1.rentals[0].tenantInfo.name;
 var displayTenantEmail = "Current Tenant Email: " + landlord1.rentals[0].tenantInfo.email;
 var monthlyRentAmount = "Monthly Rental Amount: $" + landlord1.rentals[0].tenantInfo.rentalAmount;
@@ -23,10 +20,11 @@ var getState = landlord1.rentals[0].address.state;
 var getZip = landlord1.rentals[0].address.zip;
 
 
+
 // Display property info
-$('#display-prop-address-street').val(street);
-$('#display-prop-address-street2').val(street2);
-$('#display-prop-address-citystatezip').val(cityStateZip);
+$("#display-prop-address-street").text(street);
+$('#display-prop-address-street2').text(street2);
+$('#display-prop-address-citystatezip').text(cityStateZip);
 $('#display-tenant-name').text(tenantName);
 $('#display-tenant-email').text(displayTenantEmail);
 $('#display-rental-amount').text(monthlyRentAmount);

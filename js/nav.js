@@ -24,29 +24,3 @@ $("#add-new-property").on("submit", function(e){
   $('#add-property-modal').modal('hide');
 
 });
-
-
-User.prototype.getUniqueAdd = function()
-{
-  // Restore bookShelf from Local Storage
-
-  //get 'bookShelf' and rehydrate it  (convert it back JSON)
-  // var rUser = JSON.parse(window.localStorage.getItem('user'));
-  // console.log(rUser);
-  // var uniqAddresses = [];
-  // var thisAdd;
-
-  var rUser = window.landlord1;
-
-  for (var i = 0;i < rUser.rentals.length;i++) {
-
-    //thisAdd = rUser[0].properties[i].address.address1;
-
-    $("#navProperties").append('<a class="dropdown-item" href="property-details.html">' + rUser.rentals[i].address.address1 + '</a>');
-
-    //uniqAddresses.push(thisAdd);
-
-  }
-
-  return uniqAddresses;
-}

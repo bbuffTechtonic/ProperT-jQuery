@@ -54,87 +54,87 @@ User.prototype.addRental = function(address, tenantInfo, expenses) {
 // };
 
 // //Property Object
-var prop1Address = {
-  address1: "123 Elm St.",
-  address2: "#305",
-  city: "Denver",
-  state: "CO",
-  zip: 80209
-};
+// var prop1Address = {
+//   address1: "123 Elm St.",
+//   address2: "#305",
+//   city: "Denver",
+//   state: "CO",
+//   zip: 80209
+// };
 // Tenant Object
-var tenant1Info = {
-  firstName: "Maggie",
-  lastName: "Brown",
-  email: "maggie@abc.org",
-  monthlyRent: 1750,
-  leaseStart: "6/1/2018",
-  leaseEnd: "5/31/2019"
-};
+// var tenant1Info = {
+//   firstName: "Maggie",
+//   lastName: "Brown",
+//   email: "maggie@abc.org",
+//   monthlyRent: 1750,
+//   leaseStart: "6/1/2018",
+//   leaseEnd: "5/31/2019"
+// };
 // //Expense Object
-var expenses1Obj = {
-  mileage: [
-    {
-      date: "7/5/2018",
-      amount: 25,
-      description: "Miles driven"
-    },
-    {
-      date: "8/18/2018",
-      amount: 25,
-      description: "Miles driven"
-    }
-  ],
-  mortgage: {
-    premium: 1700,
-    escrow: 800,
-    interest: 85,
-    mortgageIns: 100
-  },
-  maintenance: [
-    {
-      date: "7/18/2018",
-      description:"cleaning",
-      amount:160,
-      image:"../images/receipt.jpg"
-    }
-  ],
-  suppliesGoods: [
-    {
-      date: "9/01/2018",
-      description:"bathroom cleaning supplies",
-      amount:25,
-      image:"../images/receipt.jpg"
-    }
-  ],
-  misc: [
-    {
-      date: "7/18/2018",
-      description:"painting living room wall",
-      amount:800,
-      image:"../images/receipt.jpg"
-    }
-  ],
-  hoa: [
-    {
-      date: "6/1/2018",
-      amount: 50
-    }
-  ],
-  rent: [
-    {
-      date: "6/5/2018",
-      amount: 1750
-    },
-    {
-      date: "7/2/2018",
-      amount: 1750
-    },
-    {
-      date: "8/5/2018",
-      amount: 1750
-    }
-  ]
-};
+// var expenses1Obj = {
+//   mileage: [
+//     {
+//       date: "7/5/2018",
+//       amount: 25,
+//       description: "Miles driven"
+//     },
+//     {
+//       date: "8/18/2018",
+//       amount: 25,
+//       description: "Miles driven"
+//     }
+//   ],
+//   mortgage: {
+//     premium: 1700,
+//     escrow: 800,
+//     interest: 85,
+//     mortgageIns: 100
+//   },
+//   maintenance: [
+//     {
+//       date: "7/18/2018",
+//       description:"cleaning",
+//       amount:160,
+//       image:"../images/receipt.jpg"
+//     }
+//   ],
+//   suppliesGoods: [
+//     {
+//       date: "9/01/2018",
+//       description:"bathroom cleaning supplies",
+//       amount:25,
+//       image:"../images/receipt.jpg"
+//     }
+//   ],
+//   misc: [
+//     {
+//       date: "7/18/2018",
+//       description:"painting living room wall",
+//       amount:800,
+//       image:"../images/receipt.jpg"
+//     }
+//   ],
+//   hoa: [
+//     {
+//       date: "6/1/2018",
+//       amount: 50
+//     }
+//   ],
+//   rent: [
+//     {
+//       date: "6/5/2018",
+//       amount: 1750
+//     },
+//     {
+//       date: "7/2/2018",
+//       amount: 1750
+//     },
+//     {
+//       date: "8/5/2018",
+//       amount: 1750
+//     }
+//   ]
+// };
 // //Create Initial New Property
 // //Create initial landlord and assign a property to landlord
 // var landlord1 = new User("Patrick","Smith","patrick@yoohoo.org","password","./images/userOne.jpeg");
@@ -155,10 +155,26 @@ User.prototype.loadRentals = function (){
   }
 }
 
+User.prototype.getUniqueAdd = function() {
+  // Restore bookShelf from Local Storage
+  //get 'bookShelf' and rehydrate it  (convert it back JSON)
+  // var rUser = JSON.parse(window.localStorage.getItem('user'));
+  // console.log(rUser);
+  // var uniqAddresses = [];
+  // var thisAdd;
+  var rUser = window.landlord1;
+  for (var i = 0;i < rUser.rentals.length;i++) {
+    //thisAdd = rUser[0].properties[i].address.address1;
+    $("#navProperties").append('<a class="dropdown-item" href="property-details.html">' + rUser.rentals[i].address.address1 + '</a>');
+    //uniqAddresses.push(thisAdd);
+  }
+  //return uniqAddresses;
+}
+
 $( document ).ready(function() {
-  window.landlord1 = new User("Patrick","Smith","patrick@yoohoo.org","password","./images/userOne.jpeg");
+  //window.landlord1 = new User("Patrick","Smith","patrick@yoohoo.org","password","./images/userOne.jpeg");
   landlord1.loadRentals();
   landlords.push(landlord1);
   landlord1.getUniqueAdd();
-  
+
 });
