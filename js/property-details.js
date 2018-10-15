@@ -85,20 +85,21 @@ $("#add-expense-form").on("submit", function(e) {
   var $description = $("#add-expense-description").val();
   var $category = $("#add-expense-category-select").val();
   var $amount = $("#add-expense-amount").val();
-  // var $image =
+  var $image = $("add-expense-image").val();
   if($category !== "mileage") {
     landlord1.rentals[0].expenses[$category].push({
       date: $date,
       description: $description,
       amount: "$" + $amount,
-      // image: $image ? $image : null
+      image: $image ? $image : null
     })
-  } else {
+  } else if($category === "mileage") {
     landlord1.rentals[0].expenses.mileage.push({
       date: $date,
       amount: "$" + $amount,
-      description: "Miles driven"
-    });
+      description: "Miles driven",
+      image: $image
+    })
   }
   $('#add-expense-modal').modal('hide');
 });
@@ -126,14 +127,14 @@ $("#v-pills-tab a").on("click", function() {
     currentExpenses = storedExpenses[$selectedExpense];
   }
 
-  $.each(currentExpenses, function(index) {
+  $.each(currentExpenses, function(index, element) {
     $tr = $("<tr class='expense-row'></tr>");
     $tr.append("<th scope='col'><input type='checkbox'></th>");
-    $tr.append("<td class='date'></td>")
-    $tr.append("<td class='description'></td>")
-    $tr.append("<td class='expense-image'></td>")
+    $tr.append("<td class='date'>" + element.date + "</td>")
+    $tr.append("<td class='description'>" + element.description + "</td>")
+    $tr.append("<td class='expense-image'><img src='" + element.image + "</td>")
     $tr.append("<td class='category'>" + $category + "</td>")
-    $tr.append("<td class='amount'></td>")
+    $tr.append("<td class='amount'>" + element.amount + "</td>")
     $("tbody").append($tr);
   });
 });
